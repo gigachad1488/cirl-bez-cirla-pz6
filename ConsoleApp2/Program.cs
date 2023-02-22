@@ -17,7 +17,6 @@ namespace ConsoleApp2
             files.Add(new File("фай", ".exe", DateTime.Now));
             files.Add(new File("adй", ".png", DateTime.Now));
             List<string> fil = files.Where(s => s.type == ".exe").Select(s => s.name).ToList();
-
             vivod(fil:fil.ToArray());
             Console.ReadKey();
         }
@@ -30,20 +29,6 @@ namespace ConsoleApp2
                 s++;
                 vivod(s, fil);
             }
-        }
-
-        public static void ading(out List<File> files)
-        {
-            files = new List<File>();
-            string nam = Console.ReadLine();
-            string type = Console.ReadLine();
-            DateTime date = DateTime.Now;
-            if (nam == "лив")
-            {
-                return;
-            }
-            files.Add(new File(nam, type, date));
-            ading(out files);
         }
     }
 }
